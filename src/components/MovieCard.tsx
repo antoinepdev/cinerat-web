@@ -86,7 +86,7 @@ export default function MovieCard({
 
         {/* Enlace a detalles (opcional) */}
         <a
-          href={`/cineman/peliculas/${id}`}
+          href={`/cinerat-web/peliculas/${id}`}
           className="mt-4 text-orange-400 hover:text-orange-300 text-sm font-medium inline-flex items-center gap-1 transition group-hover:gap-2"
         >
           Ver detalles

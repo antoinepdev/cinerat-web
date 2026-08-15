@@ -13,5 +13,5 @@ export default defineConfig({
     plugins: [tailwindcss()]
   },
   site: 'https://antoinepdev.github.io',
-  base: '/cineman',
+  base: '/cinerat-web',
 });
