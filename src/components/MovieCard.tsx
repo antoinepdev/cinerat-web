@@ -85,6 +85,8 @@ export default function MovieCard({
         </p>
 
         {/* Enlace a detalles (opcional) */}
+        {
+        /*
         <a
           href={`/cinerat-web/peliculas/${id}`}
           className="mt-4 text-orange-400 hover:text-orange-300 text-sm font-medium inline-flex items-center gap-1 transition group-hover:gap-2"
@@ -92,6 +94,8 @@ export default function MovieCard({
           Ver detalles
           <span className="text-base transition-transform group-hover:translate-x-1">→</span>
         </a>
+      */
+      }
       </div>
     </div>
   );
