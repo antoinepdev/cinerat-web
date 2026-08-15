@@ -1,5 +1,6 @@
 ---
 const {prevPage, totalPages, nextPage, page} = Astro.props
+const base = import.meta.env.BASE_URL || '/cinerat-web';
 ---
 <div class="flex flex-wrap items-center justify-center gap-2 mt-12">
     {prevPage && (
@@ -29,7 +30,7 @@ const {prevPage, totalPages, nextPage, page} = Astro.props
       const isActive = pageNum === page;
       return (
         <a
-          href={`${pageNum}`}
+          href={`${base}/peliculas/${pageNum}`}
           class={`pagination-btn ${isActive ? 'active' : ''}`}
         >
           {pageNum}
