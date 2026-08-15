@@ -1,0 +1,37 @@
+---
+const { packLength } = Astro.props
+---
+<section id="inicio" class="min-h-screen bg-grid text-white flex items-center pt-20 relative overflow-hidden">
+  <div class="absolute top-0 left-0 w-full h-full glow-orange"></div>
+  <div class="max-w-6xl mx-auto px-4 py-12 grid md:grid-cols-2 gap-12 items-center relative z-10">
+    <div>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight">
+        PACK DE <span class="gradient-text">+{packLength} PELÍCULAS</span>
+      </h1>
+      <p class="text-xl md:text-2xl mt-2 font-light text-gray-300">
+        en <strong class="text-white">ESPAÑOL LATINO</strong> y/o <strong class="text-white">CASTELLANO</strong>
+      </p>
+      <p class="text-lg mt-1 text-gray-400 border-b-2 border-orange-500 inline-block pb-1">
+        sin anuncios ni bots · <span class="text-orange-400 font-bold">SOLO ARCHIVOS</span>
+      </p>
+
+      <div class="flex flex-wrap gap-8 mt-6">
+        <div><span class="block text-3xl font-bold text-orange-400">{packLength}+</span><span class="text-sm text-gray-400">Películas</span></div>
+        <div><span class="block text-3xl font-bold text-orange-400">1080p</span><span class="text-sm text-gray-400">Full HD</span></div>
+        <div><span class="block text-3xl font-bold text-orange-400">Español</span><span class="text-sm text-gray-400">Lat / Cast</span></div>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-4 mt-6">
+        <a href="#como" class="btn-primary text-lg">Quiero el Pack</a>
+        <button id="open-modal-btn" class="btn-secondary text-lg cursor-pointer">
+          📋 Ver lista de películas
+        </button>
+      </div>
+    </div>
+    <div class="flex justify-center">
+      <div class="w-full max-w-sm aspect-video bg-gradient-to-br from-orange-500/20 to-transparent rounded-2xl border border-orange-500/20 flex items-center justify-center text-6xl shadow-2xl shadow-orange-500/10">
+        🎬
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,7 +1,27 @@
 ---
-import Layout from '../layouts/Layout.astro'
----
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import Problem from '../components/Problem.astro';
+import Features from '../components/Features.astro';
+import HowToGet from '../components/HowToGet.astro';
+import Pricing from '../components/Pricing.astro';
+import Updates from '../components/Updates.astro';
+import Footer from '../components/Footer.astro';
+import MovieModal from '../components/MovieModal.astro';
+import movies from '../movies.json'
 
-<Layout>
-	<h1>Hola</h1>
+const packLength = movies.length
+
+---
+<Layout title="Cineman - Pack de Películas">
+  <Navbar />
+  <Hero packLength={packLength}/>
+  <Problem />
+  <Features packLength={packLength} />
+  <HowToGet />
+  <Pricing packLength={packLength} />
+  <Updates />
+  <Footer />
+  <MovieModal packLength={packLength} />
 </Layout>

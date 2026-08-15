@@ -1,0 +1,28 @@
+---
+import HowItem from './HowItem.astro';
+const items = [
+  '¿Cuánto vale no ver anuncios de grupos nopor o de juegos de azar?',
+  '¿Cuánto vale mantener tu Telegram limpio sin 62 grupos que no conoces?',
+  '¿Cuánto vale ver la película en tu pantalla grande y no en el celular con calidad de papa?',
+  '¿Cuánto vale no tener que escuchar sobre "la inversión millonaria o el bot de trading"?',
+];
+---
+<section id="como" class="py-16 bg-black/90 border-t border-white/5 bg-grid">
+  <div class="max-w-4xl mx-auto px-4">
+    <p class="text-2xl font-bold text-center text-white">
+      Shhh ey! ey!, espera, no cierres la pestaña, <span class="gradient-text">pequeña ratilla cinéfila</span> 😆❤️
+    </p>
+    <p class="text-center text-lg mt-4 text-gray-300">
+      Sé lo que estás pensando: <em class="text-orange-400">"Ya llegó otro vendiendo packs, mejor sigo buscando en Telegram"</em>.
+    </p>
+    <p class="text-center text-lg mt-6 font-medium text-white">Pero déjame preguntarte algo con honestidad:</p>
+    <ul class="mt-4 space-y-3 text-lg">
+      {items.map(text => <HowItem text={text} />)}
+    </ul>
+    <div class="mt-8 p-6 bg-orange-500/10 border border-orange-500/30 rounded-2xl text-center">
+      <p class="text-xl text-gray-200">
+        El precio de este pack es el equivalente a los <strong class="text-white">3 cafés de Starbucks</strong> que te tomas mientras pierdes el tiempo buscando pelis por ahí, osea <span class="gradient-text font-bold text-2xl">$10</span> (pago único, las actualizaciones son aparte).
+      </p>
+    </div>
+  </div>
+</section>

@@ -11,5 +11,7 @@ export default defineConfig({
 
   vite: {
     plugins: [tailwindcss()]
-  }
+  },
+  site: 'https://antoinepdev.github.io',
+  base: '/cineman',
 });

@@ -1,0 +1,53 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import MoviesContainer from '../../components/MoviesContainer';
+import { getMoviesBy } from '../../helpers/getMoviesBy.tsx';
+
+// Obtener todas las películas (ordenadas por defecto)
+const allMovies = await getMoviesBy(); // ← todas las películas
+
+export async function getStaticPaths({ paginate }) {
+  const sortedMovies = await getMoviesBy();
+  return paginate(sortedMovies, { pageSize: 20 });
+}
+
+const { page } = Astro.props;
+const base = '/cineman';
+---
+
+<Layout title="Catálogo de películas - Cineman">
+  <Navbar />
+  <main class="bg-grid min-h-screen pt-24 pb-16 px-4">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-8">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-white">
+          Catálogo <span class="gradient-text">completo</span>
+        </h1>
+        <p class="text-gray-400 text-lg mt-2">
+          {allMovies.length} películas disponibles · Página {page.currentPage} de {page.lastPage}
+        </p>
+      </div>
+
+      <!-- Contenedor React con filtros y paginación client-side -->
+      <MoviesContainer client:load moviesToRender={page.data} allMovies={allMovies} />
+    </div>
+  </main>
+  <footer class="bg-black/90 text-gray-500 text-center py-6 text-sm border-t border-white/5">
+    © 2026 Cineman · Hecho con ❤️ para los cinéfilos
+  </footer>
+</Layout>
+
+<style>
+  .bg-grid {
+    background-color: #0a0a0a;
+    background-image: radial-gradient(circle at 20px 20px, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  .gradient-text {
+    background: linear-gradient(135deg, #f97316, #ea580c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+</style>

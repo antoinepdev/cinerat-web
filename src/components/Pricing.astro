@@ -1,0 +1,145 @@
+---
+export interface Props {
+  packLength?: number;
+}
+const { packLength = 1071 } = Astro.props;
+---
+
+<section id="precio" class="py-16 bg-black border-t border-white/5">
+  <div class="max-w-md mx-auto px-4 text-center">
+    <h2 class="text-3xl md:text-4xl font-bold text-white">
+      Esto no es una <span class="gradient-text">suscripción</span>
+    </h2>
+    <p class="text-lg mt-2 text-gray-300">
+      es un <strong class="text-orange-400">PAGO ÚNICO</strong>, pagas una vez y guardas tu billetera para siempre.
+    </p>
+    <div class="mt-8 pricing-card p-8">
+      <h3 class="text-2xl font-bold text-white">Pack Cineman</h3>
+      <p class="text-5xl font-extrabold mt-4 text-orange-400">$10 <span class="text-xl font-normal text-gray-400">USD</span></p>
+      <p class="text-sm text-gray-500 mt-1">Pago único · Actualizaciones aparte</p>
+      <ul class="mt-6 space-y-2 text-left text-sm text-gray-300">
+        <li class="flex items-center gap-2">✅ +{packLength} películas</li>
+        <li class="flex items-center gap-2">✅ Español Latino / Castellano</li>
+        <li class="flex items-center gap-2">✅ Full HD 1080p</li>
+        <li class="flex items-center gap-2">✅ Sin anuncios ni bots</li>
+        <li class="flex items-center gap-2">✅ Archivos descargables</li>
+        <li class="flex items-center gap-2 text-orange-400">🎁 Incluye <strong>1ª actualización GRATIS</strong></li>
+      </ul>
+
+      <!-- Métodos de pago con logos -->
+      <div class="mt-6 p-4 bg-orange-500/10 rounded-xl border border-orange-500/20 text-left">
+        <p class="text-sm text-gray-300 flex items-start gap-2">
+          <span class="text-orange-400 text-lg">📲</span>
+          <span><strong class="text-white">Pago manual vía Telegram</strong><br />
+          Elige tu método de pago preferido y haz clic en el botón para contactarme.</span>
+        </p>
+        <div class="mt-4 flex flex-wrap gap-3 justify-center">
+          <!-- PayPal -->
+          <button data-method="paypal" class="method-btn px-4 py-2 rounded-full border-2 border-orange-500/30 text-sm font-medium text-gray-300 hover:border-orange-500 hover:text-white transition focus:outline-none focus:ring-2 focus:ring-orange-500/50 active-btn flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="flex-shrink-0">
+              <path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944 4.137a.642.642 0 0 1 .633-.54h4.013c3.213 0 5.53 1.213 5.53 4.347 0 2.753-1.733 4.28-4.093 4.28H8.707l-1.22 7.107a.641.641 0 0 1-.633.543h-1.13v.003z" fill="#253B80"/>
+              <path d="M18.383 10.427c-.547 3.507-3.147 4.693-6.227 4.693h-1.88l-1.22 7.107a.641.641 0 0 0 .633.74h2.827c.56 0 1.04-.407 1.127-.953l.047-.24.893-5.66.057-.307c.087-.547.567-.953 1.127-.953h.707c3.08 0 5.467-1.187 6.213-4.693.287-1.353.14-2.5-.493-3.34-.5-.6-1.293-.9-2.227-.9h-1.427c-.56 0-1.04.407-1.127.953l-.047.24z" fill="#179BD7"/>
+              <path d="M19.887 8.52c-.047.24-.087.487-.14.733-.547 3.507-3.147 4.693-6.227 4.693h-1.88l-1.22 7.107a.641.641 0 0 0 .633.74h2.827c.56 0 1.04-.407 1.127-.953l.047-.24.893-5.66.057-.307c.087-.547.567-.953 1.127-.953h.707c3.08 0 5.467-1.187 6.213-4.693.287-1.353.14-2.5-.493-3.34-.5-.6-1.293-.9-2.227-.9H17.4c.56 0 1.04.407 1.127.953l.047.24c.087.547.14.887.14 1.133z" fill="#222D65"/>
+            </svg>
+            PayPal
+          </button>
+
+          <!-- USDT (BEP-20) -->
+          <button data-method="usdt" class="method-btn px-4 py-2 rounded-full border-2 border-white/10 text-sm font-medium text-gray-300 hover:border-orange-500 hover:text-white transition focus:outline-none focus:ring-2 focus:ring-orange-500/50 flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="flex-shrink-0">
+              <circle cx="12" cy="12" r="10" fill="#f7931a" />
+              <text x="12" y="16" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white" text-anchor="middle">USDT</text>
+            </svg>
+            USDT (BEP-20)
+          </button>
+        </div>
+        <!-- Información extra según método -->
+        <div id="payment-info" class="mt-3 text-xs text-gray-400 text-center">
+          <span id="paypal-info" class="block">PayPal: envía al email que te proporcionaré por Telegram.</span>
+          <span id="usdt-info" class="hidden">USDT (BEP-20): envía a la dirección que te proporcionaré por Telegram.</span>
+        </div>
+      </div>
+
+      <!-- Botón de compra con data-pack-length -->
+      <a id="buy-btn"
+         data-pack-length={packLength}
+         target="_blank"
+         rel="noopener noreferrer"
+         class="btn-primary inline-block w-full text-center mt-4 text-lg py-3">
+        💬 Comprar Pack por $10
+      </a>
+      <p class="text-xs text-gray-500 mt-3">
+        Te atenderé personalmente en <span class="text-orange-400">@antoinepdev</span>
+      </p>
+      <p class="text-xs text-gray-500 mt-1">Acepto solo PayPal o USDT (BSC).</p>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const methodBtns = document.querySelectorAll('.method-btn');
+    const buyBtn = document.getElementById('buy-btn');
+    const paypalInfo = document.getElementById('paypal-info');
+    const usdtInfo = document.getElementById('usdt-info');
+    const baseUrl = 'https://t.me/antoinepdev?text=';
+    // Obtener el número de películas del atributo data
+    const packLength = parseInt(buyBtn.dataset.packLength) || 1071;
+
+    const methodNames = {
+      paypal: 'PayPal',
+      usdt: 'USDT (BEP-20)'
+    };
+
+    function buildMessage(method) {
+      const methodName = methodNames[method] || method;
+      return `Hola Antoine, me gustaría comprar el Pack Cineman (${packLength} películas) por 10$ vía ${methodName}`;
+    }
+
+    function selectMethod(method) {
+      // Actualizar clases de los botones
+      methodBtns.forEach(btn => {
+        btn.classList.remove('active-btn', 'border-orange-500', 'text-white');
+        btn.classList.add('border-white/10', 'text-gray-300');
+        if (btn.dataset.method === method) {
+          btn.classList.remove('border-white/10', 'text-gray-300');
+          btn.classList.add('border-orange-500', 'text-white');
+        }
+      });
+
+      // Mostrar/ocultar información y cambiar enlace
+      if (method === 'paypal') {
+        paypalInfo.classList.remove('hidden');
+        usdtInfo.classList.add('hidden');
+        buyBtn.href = baseUrl + encodeURIComponent(buildMessage('paypal'));
+        buyBtn.textContent = '💬 Comprar Pack por $10 (PayPal)';
+      } else if (method === 'usdt') {
+        paypalInfo.classList.add('hidden');
+        usdtInfo.classList.remove('hidden');
+        buyBtn.href = baseUrl + encodeURIComponent(buildMessage('usdt'));
+        buyBtn.textContent = '💬 Comprar Pack por $10 (USDT)';
+      }
+    }
+
+    methodBtns.forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        selectMethod(this.dataset.method);
+      });
+    });
+
+    // Seleccionar PayPal por defecto y actualizar el botón con el mensaje correcto
+    selectMethod('paypal');
+  });
+</script>
+
+<style>
+  .active-btn {
+    border-color: #f97316 !important;
+    color: white !important;
+    background: rgba(249, 115, 22, 0.1);
+  }
+  .method-btn {
+    cursor: pointer;
+  }
+</style>

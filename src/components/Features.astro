@@ -1,0 +1,25 @@
+---
+import FeatureCard from './FeatureCard.astro';
+const { packLength } = Astro.props
+const features = [
+  { icon: '✅', title: `+${packLength} películas`, description: 'La colección más completa.' },
+  { icon: '🔄', title: 'Actualizaciones mensuales', description: 'Siempre con los últimos estrenos.' },
+  { icon: '⚡️', title: 'Sin anuncios ni bots', description: 'SOLO ARCHIVOS, directo al grano.' },
+  { icon: '🎧', title: 'Español Latino y Castellano', description: 'Elige el audio que prefieras.' },
+  { icon: '🎬', title: 'Estrenos 2026 + Clásicos', description: 'Disney, Marvel, terror, comedia y más.' },
+  { icon: '📺', title: 'Full HD / 1080p', description: 'Calidad de imagen priorizada en su mayoría.' },
+  { icon: '💾', title: 'Son tuyas', description: 'Guárdalas, compártelas, vélas sin internet.' },
+  { icon: '📂', title: 'Organización perfecta', description: 'Por género, año, título original y en español.' },
+  { icon: '🛡️', title: 'Adiós problemas de copyright', description: 'Sin riesgos, archivos seguros.' },
+];
+---
+<section id="caracteristicas" class="py-16 bg-black border-t border-white/5">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-12">
+      PACK DE <span class="gradient-text">PELÍCULAS</span>
+    </h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {features.map(f => <FeatureCard {...f} />)}
+    </div>
+  </div>
+</section>

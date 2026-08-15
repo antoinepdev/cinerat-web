@@ -1,0 +1,90 @@
+---
+import UpdateCard from './UpdateCard.astro'
+---
+
+<section id="actualizaciones" class="py-16 bg-black/90 border-t border-white/5 bg-grid">
+  <div class="max-w-5xl mx-auto px-4">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold text-white">
+        Actualizaciones <span class="gradient-text">mensuales</span>
+      </h2>
+      <p class="text-gray-400 text-lg mt-2">Mantén tu colección siempre al día con los últimos estrenos</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8 items-start">
+      <!-- Columna izquierda: explicación detallada -->
+      <div class="space-y-6">
+        <div class="update-card p-6">
+          <h3 class="text-xl font-bold text-white flex items-center gap-2">
+            <span class="text-orange-400">📦</span> ¿Cómo funcionan?
+          </h3>
+          <ul class="mt-4 space-y-3 text-gray-300">
+            <li class="flex items-start gap-3">
+              <span class="text-orange-400 font-bold">•</span>
+              <span>Cuando compras el Pack, recibes la <strong class="text-white">versión más actualizada</strong> con todas las películas incluidas hasta ese momento.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-orange-400 font-bold">•</span>
+              <span><strong class="text-white">Primera actualización GRATIS</strong> para todos los compradores. La recibirás automáticamente al mes siguiente de tu compra.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-orange-400 font-bold">•</span>
+              <span>Las actualizaciones posteriores son <strong class="text-white">opcionales</strong> y tienen un costo de <span class="text-orange-400 font-bold">$3 USD</span> cada una.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-orange-400 font-bold">•</span>
+              <span>Cada actualización añade <strong class="text-white">+250 películas</strong> a tu colección (siempre en español latino/castellano y Full HD).</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="update-card p-6 border-orange-500/20">
+          <h3 class="text-xl font-bold text-white flex items-center gap-2">
+            <span class="text-orange-400">💡</span> ¿Vale la pena?
+          </h3>
+          <p class="text-gray-300 mt-2">
+            Por menos de lo que cuesta un café al mes, mantienes tu biblioteca cinematográfica actualizada con los estrenos más recientes, sin anuncios, sin buscadores, sin estrés.
+          </p>
+        </div>
+      </div>
+
+      <!-- Columna derecha: resumen + precio + botón -->
+      <div class="update-card p-6 md:p-8 border-orange-500/30 bg-orange-500/5">
+        <div class="text-center">
+          <div class="inline-block bg-orange-500/20 text-orange-400 text-sm font-bold px-4 py-1 rounded-full mb-4">
+            OPCIONAL · PAGO ÚNICO POR ACTUALIZACIÓN
+          </div>
+          <h4 class="text-2xl font-bold text-white">Actualización mensual</h4>
+          <div class="mt-3">
+            <span class="text-5xl font-extrabold text-orange-400">$3</span>
+            <span class="text-gray-400 text-xl"> USD</span>
+          </div>
+          <p class="text-sm text-gray-400 mt-1">+250 películas · Full HD · Español</p>
+
+          <ul class="mt-6 space-y-2 text-left text-sm text-gray-300">
+            <li class="flex items-center gap-2">✅ +250 títulos nuevos</li>
+            <li class="flex items-center gap-2">✅ Estrenos recientes incluidos</li>
+            <li class="flex items-center gap-2">✅ Misma calidad y organización</li>
+            <li class="flex items-center gap-2">✅ Sin compromiso, compras cuando quieras</li>
+          </ul>
+
+          <a href="https://t.me/antoinepdev?text=Hola%2C%20quiero%20comprar%20la%20actualizaci%C3%B3n%20del%20Pack%20Cineman"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="btn-primary inline-block w-full text-center mt-6 text-lg py-3">
+            💬 Solicitar actualización
+          </a>
+          <p class="text-xs text-gray-500 mt-3">
+            Escríbeme a <span class="text-orange-400">@antoinepdev</span> y coordinamos el envío.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Nota adicional -->
+    <div class="mt-10 text-center text-sm text-gray-500 border-t border-white/5 pt-6">
+      <p>⚡ Las actualizaciones se entregan en el mismo formato que el Pack original (archivos descargables, organización por géneros, etc.).</p>
+      <p class="mt-1">📅 Puedes adquirir una actualización en cualquier momento, no es necesario que sea mensual.</p>
+    </div>
+  </div>
+</section>

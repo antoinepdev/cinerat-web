@@ -1,0 +1,168 @@
+---
+const { packLength } = Astro.props
+const base = import.meta.env.BASE_URL || '/cineman';
+
+---
+
+<div id="movie-modal" class="modal-overlay">
+  <div class="modal-content">
+    <!-- Cabecera -->
+    <div class="flex items-center justify-between p-5 border-b border-white/10">
+      <div>
+        <h2 class="text-2xl font-bold text-white flex items-center gap-2">
+          <span class="gradient-text">📋 Lista de películas</span>
+          <span class="text-sm font-normal text-gray-400 bg-white/5 px-3 py-1 rounded-full">+{packLength} títulos</span>
+        </h2>
+        <!-- NUEVO: Aviso visible de que es solo una muestra -->
+        <div class="mt-2 flex flex-wrap items-center gap-3">
+          <span class="text-xs text-gray-400 bg-orange-500/10 px-3 py-1 rounded-full border border-orange-500/20">
+            🎯 Mostrando solo una pequeña selección
+          </span>
+          <a href=`${base}/peliculas/1`
+             target="_blank" rel="noopener noreferrer"
+             class="text-xs font-semibold text-orange-400 hover:text-orange-300 transition border-b border-orange-400/30 flex items-center gap-1">
+            📄 Ver lista completa →
+          </a>
+        </div>
+      </div>
+      <button id="close-modal-btn" class="text-gray-400 hover:text-white transition text-2xl leading-none w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/10">
+        ✕
+      </button>
+    </div>
+
+    <!-- Cuerpo scrollable -->
+    <div class="modal-scroll space-y-6">
+      <!-- Acción -->
+      <div>
+        <h3 class="text-orange-400 font-bold text-lg mb-3 flex items-center gap-2">🔥 Acción</h3>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 text-gray-300 text-sm">
+          <span>• Origen (Inception)</span>
+          <span>• John Wick Saga</span>
+          <span>• Mad Max Saga</span>
+          <span>• Gladiador 1 y 2</span>
+          <span>• Top Gun Maverick</span>
+          <span>• Misión Imposible Saga</span>
+          <span>• Duro de Matar</span>
+          <span>• Matrix Saga</span>
+          <span>• Terminator 1 y 2</span>
+          <span>• Bad boys Saga</span>
+          <span>• Los Indestructibles Saga</span>
+          <span>• James Bond Saga</span>
+        </div>
+      </div>
+
+      <!-- Superhéroes -->
+      <div>
+        <h3 class="text-orange-400 font-bold text-lg mb-3 flex items-center gap-2">🦸 Superhéroes</h3>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 text-gray-300 text-sm">
+          <span>• Spiderman Brand New Day</span>
+          <span>• Superman (Todas)</span>
+          <span>• Batman (Todas)</span>
+          <span>• Avengers (Todas)</span>
+          <span>• Iron Man (Todas)</span>
+          <span>• Supergirl</span>
+          <span>• Los Cuatro Fantásticos</span>
+          <span>• Deadpool Saga</span>
+          <span>• X-Men Saga</span>
+          <span>• Joker 1 y 2</span>
+          <span>• + 60 Películas de Marvel</span>
+          <span>• Spiderman (Todas)</span>
+        </div>
+      </div>
+
+      <!-- Comedia -->
+      <div>
+        <h3 class="text-orange-400 font-bold text-lg mb-3 flex items-center gap-2">😂 Comedia</h3>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 text-gray-300 text-sm">
+          <span>• Superbad</span>
+          <span>• The Hangover Saga</span>
+          <span>• Scary Movie Saga</span>
+          <span>• Aida La Película (2026)</span>
+          <span>• La Máscara</span>
+          <span>• Ace Ventura</span>
+          <span>• Zoolander</span>
+          <span>• Los cazafantasmas</span>
+          <span>• 21 Jump Street</span>
+          <span>• El Grinch (Jim Carrey)</span>
+          <span>• Noche de Locura</span>
+          <span>• ¿Y Dónde Están las Rubias?</span>
+        </div>
+      </div>
+
+      <!-- Ciencia Ficción -->
+      <div>
+        <h3 class="text-orange-400 font-bold text-lg mb-3 flex items-center gap-2">🚀 Ciencia Ficción</h3>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 text-gray-300 text-sm">
+          <span>• Interestelar</span>
+          <span>• The Martian</span>
+          <span>• Blade Runner 2049</span>
+          <span>• Dune Saga</span>
+          <span>• Piratas del Caribe Saga</span>
+          <span>• El señor de los anillos</span>
+          <span>• Starship Troopers</span>
+          <span>• Avatar Saga</span>
+          <span>• El Hobbit</span>
+          <span>• Jurassic Park</span>
+          <span>• El Planeta de los Simios</span>
+          <span>• District 9</span>
+        </div>
+      </div>
+
+      <!-- Animación -->
+      <div>
+        <h3 class="text-orange-400 font-bold text-lg mb-3 flex items-center gap-2">🎨 Animación</h3>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 text-gray-300 text-sm">
+          <span>• Coco</span>
+          <span>• Toy Story Saga</span>
+          <span>• Coraline</span>
+          <span>• Shrek Saga</span>
+          <span>• Soul</span>
+          <span>• Cómo Entrenar a tu Dragón</span>
+          <span>• Up</span>
+          <span>• Ratatouille</span>
+          <span>• Zootopia 1 y 2</span>
+          <span>• Frozen</span>
+          <span>• Moana</span>
+          <span>• Kung Fu Panda Saga</span>
+        </div>
+      </div>
+
+      <!-- Clásicos -->
+      <div>
+        <h3 class="text-orange-400 font-bold text-lg mb-3 flex items-center gap-2">🎭 Drama & Clásicos</h3>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 text-gray-300 text-sm">
+          <span>• El Padrino</span>
+          <span>• La Vida es Bella</span>
+          <span>• El Patriota (Mel Gibson)</span>
+          <span>• Scarface</span>
+          <span>• Pulp Fiction</span>
+          <span>• El Resplandor</span>
+          <span>• Alien Saga</span>
+          <span>• El Lobo de Wall Street</span>
+          <span>• Taxi Driver</span>
+          <span>• El Gran Gatsby</span>
+          <span>• El Cisne Negro</span>
+          <span>• La Pasión de Cristo</span>
+        </div>
+      </div>
+
+      <!-- Mensaje extra (actualizado para reforzar) -->
+      <div class="text-center text-gray-500 text-sm border-t border-white/5 pt-4 mt-2">
+        🎬 Y muchos más... <span class="text-orange-400 font-semibold">+{packLength} películas</span> en total.
+        <div class="mt-2">
+          <a href=`${base}/peliculas/1`
+             target="_blank" rel="noopener noreferrer"
+             class="text-orange-400 hover:text-orange-300 text-sm font-medium border-b border-orange-400/30">
+            Lista completa aquí →
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pie del modal -->
+    <div class="p-4 border-t border-white/10 flex justify-between items-center">
+      <span class="text-xs text-gray-500">📌 Lista de muestra · +{packLength} películas disponibles</span>
+      <button id="close-modal-btn-footer" class="btn-primary text-sm py-2 px-6">Cerrar lista</button>
+    </div>
+  </div>
+</div>

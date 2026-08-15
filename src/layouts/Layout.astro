@@ -1,15 +1,70 @@
 ---
-import '../styles/global.css'
----
+import '../styles/global.css';
 
-<!doctype html>
+export interface Props {
+  title?: string;
+}
+const { title = 'Cineman - Pack de Películas' } = Astro.props;
+---
+<!DOCTYPE html>
 <html lang="es">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<title>Cinerat</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <slot />
+
+  <!-- Script de cliente para menú y modal -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Menú hamburguesa
+      const menuBtn = document.getElementById('menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          mobileMenu.classList.toggle('open');
+        });
+        const links = mobileMenu.querySelectorAll('a');
+        links.forEach(link => {
+          link.addEventListener('click', () => mobileMenu.classList.remove('open'));
+        });
+        document.addEventListener('click', (e) => {
+          if (!mobileMenu.contains(e.target) && e.target !== menuBtn && !menuBtn.contains(e.target)) {
+            mobileMenu.classList.remove('open');
+          }
+        });
+        window.addEventListener('resize', () => {
+          if (window.innerWidth >= 768) mobileMenu.classList.remove('open');
+        });
+      }
+
+      // Modal de películas
+      const modal = document.getElementById('movie-modal');
+      const openBtn = document.getElementById('open-modal-btn');
+      const closeBtns = document.querySelectorAll('#close-modal-btn, #close-modal-btn-footer');
+      if (modal && openBtn) {
+        const openModal = () => {
+          modal.classList.add('active');
+          document.body.style.overflow = 'hidden';
+        };
+        const closeModal = () => {
+          modal.classList.remove('active');
+          document.body.style.overflow = '';
+        };
+        openBtn.addEventListener('click', openModal);
+        closeBtns.forEach(btn => btn.addEventListener('click', closeModal));
+        modal.addEventListener('click', (e) => {
+          if (e.target === modal) closeModal();
+        });
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
+        });
+      }
+    });
+  </script>
+</body>
 </html>
