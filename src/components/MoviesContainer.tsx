@@ -26,7 +26,6 @@ export default function MoviesContainer({allMovies, moviesToRender}) {
    function onChangeEventHandler (event: ChangeEvent) {
     event.preventDefault()
     const titleFilter = event.target.value
-    console.log(titleFilter)
 
     const filter =  { title: titleFilter }
     setFilter(filter)
