@@ -1,0 +1,45 @@
+---
+const {prevPage, totalPages, nextPage, page} = Astro.props
+---
+<div class="flex flex-wrap items-center justify-center gap-2 mt-12">
+    {prevPage && (
+      <a href={prevPage} class="pagination-btn">← Anterior</a>
+    )}
+    {!prevPage && (
+      <span class="pagination-btn" disabled>← Anterior</span>
+    )}
+
+    {Array.from({ length: Math.min(10, totalPages) }, (_, i) => {
+      let pageNum = i + 1;
+      if (totalPages > 10) {
+        const half = 5;
+        let startPage = Math.max(1, page - half);
+        let endPage = Math.min(totalPages, page + half);
+        if (page <= half) {
+          startPage = 1;
+          endPage = 10;
+        } else if (page > totalPages - half) {
+          startPage = totalPages - 9;
+          endPage = totalPages;
+        }
+        if (i < startPage - 1 || i > endPage - 1) return null;
+        pageNum = startPage + i;
+        if (pageNum > totalPages) return null;
+      }
+      const isActive = pageNum === page;
+      return (
+        <a
+          href={`${pageNum}`}
+          class={`pagination-btn ${isActive ? 'active' : ''}`}
+        >
+          {pageNum}
+        </a>
+      );
+    }).filter(Boolean)}
+    {nextPage && (
+      <a href={nextPage} class="pagination-btn">Siguiente →</a>
+    )}
+    {!nextPage && (
+      <span class="pagination-btn" disabled>Siguiente →</span>
+    )}
+</div>
