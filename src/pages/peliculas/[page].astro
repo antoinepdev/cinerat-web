@@ -9,7 +9,7 @@ import { getMoviesBy } from '../../helpers/getMoviesBy.tsx';
 const allMovies = await getMoviesBy(); // ← todas las películas
 
 export async function getStaticPaths({ paginate }) {
-  const sortedMovies = await getMoviesBy();
+  const sortedMovies = await getMoviesBy({ sort_by: 'popularity' });
   return paginate(sortedMovies, { pageSize: 20 });
 }
 
