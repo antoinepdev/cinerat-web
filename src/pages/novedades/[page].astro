@@ -1,0 +1,41 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import MoviesContainer from '../../components/MoviesContainer';
+import Pagination from '../../components/Pagination.astro';
+import { getLatestCatalogVersion, getLatestUpdateMovies } from '../../helpers/getMoviesBy.tsx';
+
+const latestVersion = getLatestCatalogVersion();
+const latestMovies = getLatestUpdateMovies();
+
+export async function getStaticPaths({ paginate }) {
+  return paginate(getLatestUpdateMovies(), { pageSize: 20 });
+}
+
+const { page } = Astro.props;
+---
+
+<Layout title={`Novedades v${latestVersion} - Cineman`}>
+  <Navbar />
+  <main class="bg-grid min-h-screen pt-24 pb-16 px-4">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-8">
+        <div class="inline-block bg-orange-500/20 text-orange-400 text-sm font-bold px-4 py-1 rounded-full mb-4">
+          ACTUALIZACIÓN v{latestVersion}
+        </div>
+        <h1 class="text-4xl md:text-5xl font-extrabold text-white">
+          Novedades <span class="gradient-text">de la v{latestVersion}</span>
+        </h1>
+        <p class="text-gray-400 text-lg mt-2">
+          {latestMovies.length} películas nuevas · Página {page.currentPage} de {page.lastPage}
+        </p>
+      </div>
+
+      <MoviesContainer moviesToRender={page.data} />
+      <Pagination prevPage={page.url.prev} nextPage={page.url.next} totalPages={page.total} page={page.currentPage} path="/novedades"/>
+    </div>
+  </main>
+  <footer class="bg-black/90 text-gray-500 text-center py-6 text-sm border-t border-white/5">
+    © 2026 Cineman · Hecho con ❤️ para los cinéfilos
+  </footer>
+</Layout>
