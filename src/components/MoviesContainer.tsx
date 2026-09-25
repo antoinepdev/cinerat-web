@@ -5,6 +5,7 @@ import SearchInput from './SearchBar.tsx';
 export default function MoviesContainer({allMovies, moviesToRender}) {
   const [ filter, setFilter ] = useState({})
   const [ filteredMovies, setFilteredMovies ] = useState(moviesToRender)
+  const searchable = allMovies !== undefined
 
   useEffect(() => {
     if (!filter.title) {
@@ -33,8 +34,8 @@ export default function MoviesContainer({allMovies, moviesToRender}) {
 
   return (
     <div>
-    <SearchInput onChange={onChangeEventHandler}/>
-      {moviesToRender.length > 0 ? (
+    {searchable && <SearchInput onChange={onChangeEventHandler}/>}
+      {filteredMovies.length > 0 ? (
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6">
           {filteredMovies.map((movie) => (
             <MovieCard key={movie.id} {...movie} />
