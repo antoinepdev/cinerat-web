@@ -13,8 +13,16 @@ export function getMoviesBy({ sort_by = 'popularity' } = { sort_by: 'popularity'
   } else if (sort_by === 'popularity') {
     sorted.sort((a, b) => b.popularity - a.popularity);
   } else {
-    // Por defecto, ordenar por id descendente (más reciente)
     sorted.sort((a, b) => b.id - a.id);
   }
   return sorted;
+}
+
+export function getLatestCatalogVersion() {
+  return movies.reduce((max, movie) => Math.max(max, movie.catalog_version ?? 0), 0);
+}
+
+export function getLatestUpdateMovies() {
+  const latestVersion = getLatestCatalogVersion();
+  return getMoviesBy().filter((movie) => movie.catalog_version === latestVersion);
 }
