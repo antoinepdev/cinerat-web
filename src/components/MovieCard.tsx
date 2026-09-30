@@ -4,11 +4,14 @@ interface MovieCardProps {
   title_cas?: string | null;
   title_lat?: string | null;
   year: number;
-  language_cas: boolean;
-  language_lat: boolean;
+  language_cas: boolean | null;
+  language_lat: boolean | null;
   poster: string;
   description: string;
+  genres: string[];
 }
+
+const MAX_VISIBLE_GENRES = 2;
 
 export default function MovieCard({
   id,
@@ -20,6 +23,7 @@ export default function MovieCard({
   language_lat,
   poster,
   description,
+  genres,
 }: MovieCardProps) {
   // Título principal: latino > castellano > inglés
   const mainTitle = title_lat || title_cas || title_en;
@@ -27,6 +31,9 @@ export default function MovieCard({
   const shortDesc = description.length > 120
     ? description.slice(0, 120) + '…'
     : description;
+  // Géneros: como mucho 2 visibles, el resto se resume
+  const visibleGenres = (genres ?? []).slice(0, MAX_VISIBLE_GENRES);
+  const hiddenGenres = (genres ?? []).length - visibleGenres.length;
 
   return (
     <div className="movie-card group bg-[#141414] rounded-xl overflow-hidden border border-white/5 hover:border-orange-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-orange-500/10 flex flex-col h-full">
@@ -78,6 +85,28 @@ export default function MovieCard({
             <span className="text-xs text-gray-500">Solo inglés</span>
           )}
         </div>
+
+        {/* Géneros */}
+        {visibleGenres.length > 0 && (
+          <div className="flex flex-wrap gap-1.5 mt-3">
+            {visibleGenres.map((genre) => (
+              <span
+                key={genre}
+                className="text-xs font-medium bg-white/5 text-gray-300 border border-white/10 px-2 py-0.5 rounded-full whitespace-nowrap"
+              >
+                {genre}
+              </span>
+            ))}
+            {hiddenGenres > 0 && (
+              <span
+                title={genres.join(', ')}
+                className="text-xs font-medium bg-white/5 text-gray-500 border border-white/10 px-2 py-0.5 rounded-full"
+              >
+                +{hiddenGenres}
+              </span>
+            )}
+          </div>
+        )}
 
         {/* Descripción */}
         <p className="mt-3 text-sm text-gray-400 line-clamp-3 flex-1">
