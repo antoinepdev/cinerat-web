@@ -4,9 +4,13 @@ import Navbar from '../../components/Navbar.astro';
 import MoviesContainer from '../../components/MoviesContainer';
 import Pagination from '../../components/Pagination.astro';
 import { getMoviesBy } from '../../helpers/getMoviesBy.tsx';
+import { getFacetOptions } from '../../helpers/movieFilters.ts';
 
 // Obtener todas las películas (ordenadas por defecto)
 const allMovies = await getMoviesBy(); // ← todas las películas
+
+// Años y géneros disponibles para los filtros
+const facets = getFacetOptions(allMovies);
 
 export async function getStaticPaths({ paginate }) {
   const sortedMovies = await getMoviesBy({ sort_by: 'popularity' });
@@ -26,19 +30,38 @@ const base = '/cinerat-web';
           Catálogo <span class="gradient-text">completo</span>
         </h1>
         <p class="text-gray-400 text-lg mt-2">
-          {allMovies.length} películas disponibles · Página {page.currentPage} de {page.lastPage}
+          <span data-catalog-count data-default=`${allMovies.length} películas disponibles`>{allMovies.length} películas disponibles</span> · Página {page.currentPage} de {page.lastPage}
         </p>
       </div>
 
       <!-- Contenedor React con filtros y paginación client-side -->
-      <MoviesContainer client:load moviesToRender={page.data} allMovies={allMovies} />
-      <Pagination prevPage={page.url.prev} nextPage={page.url.next} totalPages={page.total} page={page.currentPage}/>
+      <MoviesContainer client:load moviesToRender={page.data} allMovies={allMovies} facets={facets} />
+      <div data-catalog-pagination>
+        <Pagination prevPage={page.url.prev} nextPage={page.url.next} totalPages={page.total} page={page.currentPage}/>
+      </div>
     </div>
   </main>
   <footer class="bg-black/90 text-gray-500 text-center py-6 text-sm border-t border-white/5">
     © 2026 Cineman · Hecho con ❤️ para los cinéfilos
   </footer>
 </Layout>
+
+<script>
+  // La isla de React no puede alcanzar la paginación (Astro la envuelve en
+  // <astro-island>), así que avisa por evento y este script ajusta la cabecera.
+  window.addEventListener('catalog:filters', (event) => {
+    const { active, count } = (event as CustomEvent<{ active: boolean; count: number }>).detail;
+
+    document.querySelector('[data-catalog-pagination]')?.toggleAttribute('hidden', active);
+
+    const label = document.querySelector('[data-catalog-count]');
+    if (label) {
+      label.textContent = active
+        ? `${count} películas encontradas`
+        : (label.dataset.default ?? '');
+    }
+  });
+</script>
 
 <style>
   .bg-grid {
