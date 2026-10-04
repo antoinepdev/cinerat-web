@@ -39643,7 +39643,7 @@
     "title_cas": "La odisea",
     "title_lat": "La Odisea",
     "year": 2026,
-    "language_cas": true,
+    "language_cas": false,
     "language_lat": true,
     "catalog_name": "standard",
     "catalog_version": 4,
