@@ -9,6 +9,7 @@ interface Props {
   facets: FilterFacets;
   filters: MovieFilterState;
   onChange: (patch: Partial<MovieFilterState>) => void;
+  showLanguages?: boolean;
 }
 
 const CHIP_BASE =
@@ -21,7 +22,7 @@ const SELECT =
 
 const LABEL = 'block text-xs font-semibold uppercase tracking-wide text-gray-500 mb-2';
 
-export default function MovieFilters({ facets, filters, onChange }: Props) {
+export default function MovieFilters({ facets, filters, onChange, showLanguages = true }: Props) {
   function toggleGenre(slug: string) {
     const genres = filters.genres.includes(slug)
       ? filters.genres.filter((genre) => genre !== slug)
@@ -102,26 +103,28 @@ export default function MovieFilters({ facets, filters, onChange }: Props) {
           </div>
         </fieldset>
 
-        <fieldset>
-          <legend className={LABEL}>Idioma</legend>
-          <div className="flex flex-wrap gap-2">
-            {LANGUAGES.map(({ value, label, emoji }) => {
-              const active = filters.languages.includes(value);
-              return (
-                <button
-                  key={value}
-                  type="button"
-                  aria-pressed={active}
-                  onClick={() => toggleLanguage(value)}
-                  className={active ? CHIP_ACTIVE : CHIP_IDLE}
-                >
-                  <span className="mr-1">{emoji}</span>
-                  {label}
-                </button>
-              );
-            })}
-          </div>
-        </fieldset>
+        {showLanguages && (
+          <fieldset>
+            <legend className={LABEL}>Idioma</legend>
+            <div className="flex flex-wrap gap-2">
+              {LANGUAGES.map(({ value, label, emoji }) => {
+                const active = filters.languages.includes(value);
+                return (
+                  <button
+                    key={value}
+                    type="button"
+                    aria-pressed={active}
+                    onClick={() => toggleLanguage(value)}
+                    className={active ? CHIP_ACTIVE : CHIP_IDLE}
+                  >
+                    <span className="mr-1">{emoji}</span>
+                    {label}
+                  </button>
+                );
+              })}
+            </div>
+          </fieldset>
+        )}
       </div>
 
       <fieldset className="mt-5">

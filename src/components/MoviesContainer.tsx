@@ -8,6 +8,7 @@ import {
   filtersToSearchParams,
   hasActiveFilters,
   parseFiltersFromSearch,
+  type CatalogKind,
   type FilterFacets,
   type Movie,
   type MovieFilters as MovieFilterState,
@@ -17,9 +18,23 @@ interface Props {
   allMovies?: Movie[];
   moviesToRender: Movie[];
   facets?: FilterFacets;
+  kind?: CatalogKind;
+  selectable?: boolean;
+  selectedIds?: number[];
+  onToggleSelect?: (id: number) => void;
+  itemLabel?: string;
 }
 
-export default function MoviesContainer({ allMovies, moviesToRender, facets }: Props) {
+export default function MoviesContainer({
+  allMovies,
+  moviesToRender,
+  facets,
+  kind = 'movie',
+  selectable = false,
+  selectedIds = [],
+  onToggleSelect,
+  itemLabel = 'películas',
+}: Props) {
   const [filters, setFilters] = useState<MovieFilterState>(EMPTY_FILTERS);
   const searchable = allMovies !== undefined && facets !== undefined;
   const filtering = searchable && hasActiveFilters(filters);
@@ -28,8 +43,8 @@ export default function MoviesContainer({ allMovies, moviesToRender, facets }: P
   // del servidor y el primer render del cliente coincidan.
   useEffect(() => {
     if (!window.location.search || !facets) return;
-    setFilters(parseFiltersFromSearch(window.location.search, facets));
-  }, [facets]);
+    setFilters(parseFiltersFromSearch(window.location.search, facets, { allowLanguages: kind !== 'series' }));
+  }, [facets, kind]);
 
   // Sin filtros se mantiene la página paginada del servidor; con filtros se
   // busca sobre todo el catálogo (los resultados abarcan todas las páginas).
@@ -72,18 +87,27 @@ export default function MoviesContainer({ allMovies, moviesToRender, facets }: P
           facets={facets}
           filters={filters}
           onChange={onChange}
+          showLanguages={kind !== 'series'}
         />
       )}
 
       {filteredMovies.length > 0 ? (
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6">
           {filteredMovies.map((movie) => (
-            <MovieCard key={movie.id} {...movie} />
+            <MovieCard
+              key={movie.id}
+              {...movie}
+              kind={kind}
+              episodesCount={movie.episodes_count}
+              selectable={selectable}
+              selected={selectedIds.includes(movie.id)}
+              onToggle={onToggleSelect}
+            />
           ))}
         </div>
       ) : (
         <div className="text-center py-12">
-          <p className="text-gray-400 text-lg">No se encontraron películas con esos filtros.</p>
+          <p className="text-gray-400 text-lg">No se encontraron {itemLabel} con esos filtros.</p>
         </div>
       )}
 

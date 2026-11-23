@@ -1,14 +1,21 @@
+import type { CatalogKind } from '../helpers/movieFilters.ts';
+
 interface MovieCardProps {
   id: number;
   title_en: string;
   title_cas?: string | null;
   title_lat?: string | null;
   year: number;
-  language_cas: boolean | null;
-  language_lat: boolean | null;
+  language_cas?: boolean | null;
+  language_lat?: boolean | null;
   poster: string;
   description: string;
   genres: string[];
+  kind?: CatalogKind;
+  episodesCount?: number;
+  selectable?: boolean;
+  selected?: boolean;
+  onToggle?: (id: number) => void;
 }
 
 const MAX_VISIBLE_GENRES = 2;
@@ -24,13 +31,17 @@ export default function MovieCard({
   poster,
   description,
   genres,
+  kind = 'movie',
+  episodesCount,
+  selectable = false,
+  selected = false,
+  onToggle,
 }: MovieCardProps) {
+  const isSeries = kind === 'series';
   // Título principal: latino > castellano > inglés
   const mainTitle = title_lat || title_cas || title_en;
   // Descripción corta (120 caracteres)
-  const shortDesc = description.length > 120
-    ? description.slice(0, 120) + '…'
-    : description;
+  const shortDesc = description.length > 120 ? description.slice(0, 120) + '…' : description;
   // Géneros: como mucho 2 visibles, el resto se resume
   const visibleGenres = (genres ?? []).slice(0, MAX_VISIBLE_GENRES);
   const hiddenGenres = (genres ?? []).length - visibleGenres.length;
@@ -45,6 +56,11 @@ export default function MovieCard({
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
           loading="lazy"
         />
+        {isSeries && (
+          <span className="absolute top-3 left-3 bg-orange-500 text-white text-xs font-bold px-2.5 py-1 rounded-full shadow-lg shadow-black/40">
+            SERIE
+          </span>
+        )}
         <span className="absolute top-3 right-3 bg-black/70 backdrop-blur-sm text-white text-xs font-bold px-3 py-1 rounded-full border border-white/10">
           {year}
         </span>
@@ -69,22 +85,24 @@ export default function MovieCard({
           )}
         </div>
 
-        {/* Badges de idioma */}
-        <div className="flex flex-wrap gap-2 mt-3">
-          {language_lat && (
-            <span className="inline-flex items-center gap-1 text-xs font-medium bg-green-500/20 text-green-400 px-2 py-0.5 rounded-full border border-green-500/20">
-              <span>🌎</span> Latino
-            </span>
-          )}
-          {language_cas && (
-            <span className="inline-flex items-center gap-1 text-xs font-medium bg-blue-500/20 text-blue-400 px-2 py-0.5 rounded-full border border-blue-500/20">
-              <span>🇪🇸</span> Castellano
-            </span>
-          )}
-          {!language_lat && !language_cas && (
-            <span className="text-xs text-gray-500">Solo inglés</span>
-          )}
-        </div>
+        {/* Badges de idioma: solo aplican a películas */}
+        {!isSeries && (
+          <div className="flex flex-wrap gap-2 mt-3">
+            {language_lat && (
+              <span className="inline-flex items-center gap-1 text-xs font-medium bg-green-500/20 text-green-400 px-2 py-0.5 rounded-full border border-green-500/20">
+                <span>🌎</span> Latino
+              </span>
+            )}
+            {language_cas && (
+              <span className="inline-flex items-center gap-1 text-xs font-medium bg-blue-500/20 text-blue-400 px-2 py-0.5 rounded-full border border-blue-500/20">
+                <span>🇪🇸</span> Castellano
+              </span>
+            )}
+            {!language_lat && !language_cas && (
+              <span className="text-xs text-gray-500">Solo inglés</span>
+            )}
+          </div>
+        )}
 
         {/* Géneros */}
         {visibleGenres.length > 0 && (
@@ -113,18 +131,24 @@ export default function MovieCard({
           {shortDesc}
         </p>
 
-        {/* Enlace a detalles (opcional) */}
-        {
-        /*
-        <a
-          href={`/cinerat-web/peliculas/${id}`}
-          className="mt-4 text-orange-400 hover:text-orange-300 text-sm font-medium inline-flex items-center gap-1 transition group-hover:gap-2"
-        >
-          Ver detalles
-          <span className="text-base transition-transform group-hover:translate-x-1">→</span>
-        </a>
-      */
-      }
+        {/* Selección de series */}
+        {selectable && (
+          <button
+            type="button"
+            aria-pressed={selected}
+            onClick={() => onToggle?.(id)}
+            className={`mt-4 w-full flex items-center justify-between gap-2 rounded-lg border px-3 py-2 text-sm font-semibold transition-colors ${
+              selected
+                ? 'border-orange-500 bg-orange-500/20 text-orange-300'
+                : 'border-white/10 bg-white/5 text-gray-300 hover:border-orange-500/50 hover:text-white'
+            }`}
+          >
+            <span>{selected ? '✓ En mi selección' : '+ Añadir a mi selección'}</span>
+            {episodesCount !== undefined && (
+              <span className="text-xs font-normal text-gray-400">{episodesCount} epis.</span>
+            )}
+          </button>
+        )}
       </div>
     </div>
   );
