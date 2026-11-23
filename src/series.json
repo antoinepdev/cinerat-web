@@ -1,0 +1,596 @@
+[
+  {
+    "id": 1,
+    "title_en": "The Boys",
+    "title_cas": "",
+    "title_lat": "",
+    "year": 2019,
+    "tmdb_id": 76479,
+    "poster": "https://image.tmdb.org/t/p/w500/in1R2dDc421JxsoRWaIIAqVI2KE.jpg",
+    "telegram_poster_id": 4,
+    "backdrop_path": "https://image.tmdb.org/t/p/w1280/bq28ajZaoMyzEIm6REelqyqtEDZ.jpg",
+    "description": "La serie tiene lugar en un mundo en el que los superhéroes representan el lado oscuro de la celebridad y la fama. Un grupo de vigilantes que se hacen llamar \"The Boys\" decide hacer todo lo posible por frenar a los superhéroes que están perjudicando a la sociedad, independientemente de los riesgos que ello conlleva.",
+    "popularity": 130.5058,
+    "genres": [
+      "Sci-Fi & Fantasy",
+      "Action & Adventure"
+    ],
+    "created_at": "2026-10-11T14:40:04.925Z",
+    "updated_at": "2026-10-11T14:40:04.925Z",
+    "episodes_count": 40
+  },
+  {
+    "id": 2,
+    "title_en": "Lucky",
+    "title_cas": "",
+    "title_lat": "",
+    "year": 2026,
+    "tmdb_id": 278624,
+    "poster": "https://image.tmdb.org/t/p/w500/xsrkiXg8EuNNtbPtbmvCxg95gK7.jpg",
+    "telegram_poster_id": 49,
+    "backdrop_path": "https://image.tmdb.org/t/p/w1280/mKrhRPB7rMvy0bIU1l1NYhgh1eI.jpg",
+    "description": "Cuando un robo de varios millones de dólares sale mal, la estafadora Lucky se ve obligada a huir. Perseguida tanto por el FBI como por un despiadado jefe criminal, Lucky deberá luchar por su vida y buscar una salida.",
+    "popularity": 29.713,
+    "genres": [
+      "Drama",
+      "Crimen"
+    ],
+    "created_at": "2026-10-11T14:55:20.718Z",
+    "updated_at": "2026-10-11T14:55:20.718Z",
+    "episodes_count": 7
+  },
+  {
+    "id": 3,
+    "title_en": "Mr. Robot",
+    "title_cas": "",
+    "title_lat": "",
+    "year": 2015,
+    "tmdb_id": 62560,
+    "poster": "https://image.tmdb.org/t/p/w500/kv1nRqgebSsREnd7vdC2pSGjpLo.jpg",
+    "telegram_poster_id": 64,
+    "backdrop_path": "https://image.tmdb.org/t/p/w1280/uJUe985oIuRiD3hmHQYskIMc2WU.jpg",
+    "description": "Sigue a un misterioso anarquista que recluta a un joven programador de computadoras (Malek) que sufre de un trastorno antisocial y se conecta a la gente pirateándolos.",
+    "popularity": 53.6121,
+    "genres": [
+      "Crimen",
+      "Drama"
+    ],
+    "created_at": "2026-10-11T15:01:57.819Z",
+    "updated_at": "2026-10-11T15:01:57.819Z",
+    "episodes_count": 45
+  },
+  {
+    "id": 4,
+    "title_en": "FROM",
+    "title_cas": "From",
+    "title_lat": "From",
+    "year": 2022,
+    "tmdb_id": 124364,
+    "poster": "https://image.tmdb.org/t/p/w500/pRtJagIxpfODzzb0T0NAvZSzErC.jpg",
+    "telegram_poster_id": 110,
+    "backdrop_path": "https://image.tmdb.org/t/p/w1280/m7eiSGHFzr584zFmetGqkqaU6BN.jpg",
+    "description": "Desvela el misterio de un pueblo de pesadilla en el centro de Norteamérica que atrapa a todos los que entran. Mientras los residentes involuntarios luchan por mantener una sensación de normalidad y buscan una salida, también deben sobrevivir a las amenazas del bosque circundante, incluidas las aterradoras criaturas que salen cuando se pone el sol.",
+    "popularity": 127.6798,
+    "genres": [
+      "Misterio",
+      "Drama",
+      "Sci-Fi & Fantasy"
+    ],
+    "created_at": "2026-10-11T15:37:43.030Z",
+    "updated_at": "2026-10-11T15:37:43.030Z",
+    "episodes_count": 40
+  },
+  {
+    "id": 5,
+    "title_en": "The Mentalist",
+    "title_cas": "El mentalista",
+    "title_lat": "El Mentalista",
+    "year": 2008,
+    "tmdb_id": 5920,
+    "poster": "https://image.tmdb.org/t/p/w500/acYXu4KaDj1NIkMgObnhe4C4a0T.jpg",
+    "telegram_poster_id": 151,
+    "backdrop_path": "https://image.tmdb.org/t/p/w1280/rJFqKcmMSttdNP58l0dVzY2NcTA.jpg",
+    "description": "El mentalista es una serie policiaca americana sobre Patrick Jane, ex médium, que trabaja de asesor para la Oficina de Investigación de California (California Bureau of Investigation), usando su altamente desarrollada capacidad de observación, que anteriormente usaba para \"leer\" mentes.",
+    "popularity": 361.7743,
+    "genres": [
+      "Crimen",
+      "Drama",
+      "Misterio"
+    ],
+    "created_at": "2026-10-24T18:44:56.130Z",
+    "updated_at": "2026-10-24T18:44:56.130Z",
+    "episodes_count": 151
+  },
+  {
+    "id": 6,
+    "title_en": "INVINCIBLE",
+    "title_cas": "INVENCIBLE",
+    "title_lat": "INVENCIBLE",
+    "year": 2021,
+    "tmdb_id": 95557,
+    "poster": "https://image.tmdb.org/t/p/w500/4tblBrslcKSifMVZ3TmtT2ukMor.jpg",
+    "telegram_poster_id": 303,
+    "backdrop_path": "https://image.tmdb.org/t/p/w1280/9qrroces8C6R9aKr08hACNPVXdZ.jpg",
+    "description": "Mark Grayson es un adolescente normal, excepto por el hecho de que su padre es el superhéroe más poderoso del planeta. Poco después de su decimoséptimo cumpleaños, Mark comienza a desarrollar sus propios poderes y entra en la tutela de su padre.",
+    "popularity": 54.457,
+    "genres": [
+      "Animación",
+      "Drama",
+      "Sci-Fi & Fantasy",
+      "Action & Adventure"
+    ],
+    "created_at": "2026-11-16T12:55:00.196Z",
+    "updated_at": "2026-11-16T12:55:00.196Z",
+    "episodes_count": 31
+  },
+  {
+    "id": 7,
+    "title_en": "Star Wars: Maul - Shadow Lord",
+    "title_cas": "Star Wars: Maul - Señor de las sombras",
+    "title_lat": "Star Wars: Maul - Señor de las sombras",
+    "year": 2026,
+    "tmdb_id": 289219,
+    "poster": "https://image.tmdb.org/t/p/w500/fTfLd3s9yBNOzbFHD2aXvwEs93H.jpg",
+    "telegram_poster_id": 335,
+    "backdrop_path": "https://image.tmdb.org/t/p/w1280/cvvj1RXGmmAZ1FZr6CrUu8LgQm5.jpg",
+    "description": "Maul se alza de nuevo para liderar las facciones del hampa, conspirando para reconstruir su sindicato criminal y entrenar a un nuevo aprendiz en un planeta no tocado por el Imperio Galáctico.",
+    "popularity": 12.768,
+    "genres": [
+      "Action & Adventure",
+      "Animación",
+      "Sci-Fi & Fantasy"
+    ],
+    "created_at": "2026-11-16T13:01:03.178Z",
+    "updated_at": "2026-11-16T13:01:03.178Z",
+    "episodes_count": 10
+  },
+  {
+    "id": 8,
+    "title_en": "What If...?",
+    "title_cas": "¿Qué pasaría si...?",
+    "title_lat": "",
+    "year": 2021,
+    "tmdb_id": 91363,
+    "poster": "https://image.tmdb.org/t/p/w500/lztz5XBMG1x6Y5ubz7CxfPFsAcW.jpg",
+    "telegram_poster_id": 346,
+    "backdrop_path": "https://image.tmdb.org/t/p/w1280/jnzoh5qoxRLFRIQAxnl6D3RStPC.jpg",
+    "description": "Inspirándose en los cómics del mismo nombre, cada episodio explora un momento crucial del Universo Cinematográfico Marvel.",
+    "popularity": 35.1821,
+    "genres": [
+      "Animación",
+      "Action & Adventure",
+      "Sci-Fi & Fantasy"
+    ],
+    "created_at": "2026-11-16T13:05:29.311Z",
+    "updated_at": "2026-11-16T13:05:29.311Z",
+    "episodes_count": 26
+  },
+  {
+    "id": 9,
+    "title_en": "Reacher",
+    "title_cas": "",
+    "title_lat": "",
+    "year": 2022,
+    "tmdb_id": 108978,
+    "poster": "https://image.tmdb.org/t/p/w500/f1VCQIG2iCyOookdgOzwtUpwWC0.jpg",
+    "telegram_poster_id": 373,
+    "backdrop_path": "https://image.tmdb.org/t/p/w1280/pF0qkRsrHkdYadPWY9AMeFZfcwk.jpg",
+    "description": "Cuando el exagente de la Policía Militar Jack Reacher es detenido por un asesinato que no ha cometido, se ve envuelto en una mortífera conspiración llena de policías corruptos, empresarios dudosos y políticos intrigantes. Armado solo con su ingenio, debe averiguar qué pasa en Margrave, Georgia. La primera temporada de Reacher se basa en Zona peligrosa, el superventas internacional de Lee Child.",
+    "popularity": 184.9106,
+    "genres": [
+      "Action & Adventure",
+      "Crimen"
+    ],
+    "created_at": "2026-11-16T13:10:43.994Z",
+    "updated_at": "2026-11-16T13:10:43.994Z",
+    "episodes_count": 32
+  },
+  {
+    "id": 10,
+    "title_en": "Constantine",
+    "title_cas": "Constantine",
+    "title_lat": "",
+    "year": 2014,
+    "tmdb_id": 60743,
+    "poster": "https://image.tmdb.org/t/p/w500/gQ3bA1DBKyZwkDCHJFEAT0MkKpu.jpg",
+    "telegram_poster_id": 406,
+    "backdrop_path": "https://image.tmdb.org/t/p/w1280/lmDDpCCei9kTPIZb13P2NAqpmvO.jpg",
+    "description": "John intenta conectarse con el alma de la persona que más busca, su madre, que murió dando a luz al protagonista, sin éxito. Cuando Liv, la hija de un amigo fallecido, se convierte en el blanco de los demonios, John interviene para salvarla, y juntos forman una alianza.",
+    "popularity": 10.5902,
+    "genres": [
+      "Action & Adventure",
+      "Drama",
+      "Sci-Fi & Fantasy"
+    ],
+    "created_at": "2026-11-16T13:21:23.762Z",
+    "updated_at": "2026-11-16T13:21:23.762Z",
+    "episodes_count": 13
+  },
+  {
+    "id": 12,
+    "title_en": "Young Justice",
+    "title_cas": "La joven Liga de la Justicia",
+    "title_lat": "Justicia Joven",
+    "year": 2010,
+    "tmdb_id": 33217,
+    "poster": "https://image.tmdb.org/t/p/w500/fn2wMnrPWIjDMnxIf0H89ZtDehK.jpg",
+    "telegram_poster_id": 477,
+    "backdrop_path": "https://image.tmdb.org/t/p/w1280/pOKcw45cAMPu8DN7E3bN5FEvxM3.jpg",
+    "description": "Re-imaginación de la franquicia Teen Titans, presentando superhéroes en su etapa como adolescentes lidiando además de con supervillanos, con problemas típicos de su edad.",
+    "popularity": 52.8901,
+    "genres": [
+      "Animación",
+      "Sci-Fi & Fantasy",
+      "Action & Adventure"
+    ],
+    "created_at": "2026-11-16T13:43:14.104Z",
+    "updated_at": "2026-11-16T13:43:14.104Z",
+    "episodes_count": 97
+  },
+  {
+    "id": 13,
+    "title_en": "VisionQuest",
+    "title_cas": "VisionQuest",
+    "title_lat": "",
+    "year": 2026,
+    "tmdb_id": 213375,
+    "poster": "https://image.tmdb.org/t/p/w500/WGyAyBPncfuu8MZhLY9RtfZPM0.jpg",
+    "telegram_poster_id": 575,
+    "backdrop_path": "https://image.tmdb.org/t/p/w1280/uoXXbN2PrOxH6UKyP7kYwmGpAAP.jpg",
+    "description": "Tras reiniciarse, Visión ha estado huyendo de quienes pretenden convertirlo en un arma y ahora se encuentra escondido. Buscando un nuevo propósito, pide consejo a las distintas IA que están integradas en su programación, incluidos Friday, Edith, Jarvis y el infame Ultrón. Su discreta existencia llega a su fin cuando una recompensa por su cabeza le obliga a huir junto a Thomas Shepard, un misterioso joven que podría ser la reencarnación de su hijo. Mientras evita ser capturado, Visión tendrá que enfrentarse a su propia naturaleza, resistirse a la influencia de Ultrón y desentrañar el misterio que rodea a su joven compañero si quiere sobrevivir.",
+    "popularity": 207.7615,
+    "genres": [
+      "Sci-Fi & Fantasy",
+      "Drama"
+    ],
+    "created_at": "2026-11-19T11:04:38.576Z",
+    "updated_at": "2026-11-19T11:04:38.576Z",
+    "episodes_count": 8
+  },
+  {
+    "id": 14,
+    "title_en": "A Knight of the Seven Kingdoms",
+    "title_cas": "El caballero de los Siete Reinos",
+    "title_lat": "El caballero de los Siete Reinos",
+    "year": 2026,
+    "tmdb_id": 224372,
+    "poster": "https://image.tmdb.org/t/p/w500/k8yARbD9iYn2nRX2HvsopfKDN2r.jpg",
+    "telegram_poster_id": 592,
+    "backdrop_path": "https://image.tmdb.org/t/p/w1280/7mkUu1F2hVUNgz24xO8HPx0D6mK.jpg",
+    "description": "Un siglo antes de los acontecimientos de \"Juego de Tronos\", dos héroes improbables vagaban por Poniente: un joven e ingenuo, pero valiente caballero, Ser Duncan el Alto, y su pequeño escudero, Egg. Ambientada en una época en la que el linaje Targaryen aún ostenta el Trono de Hierro y el recuerdo del último dragón aún no ha desaparecido de la memoria viva, grandes destinos, poderosos enemigos y peligrosas hazañas aguardan a estos improbables e incomparables amigos.",
+    "popularity": 21.1916,
+    "genres": [
+      "Drama",
+      "Sci-Fi & Fantasy",
+      "Action & Adventure"
+    ],
+    "created_at": "2026-11-19T11:06:01.866Z",
+    "updated_at": "2026-11-19T11:06:01.866Z",
+    "episodes_count": 6
+  },
+  {
+    "id": 15,
+    "title_en": "Shooter",
+    "title_cas": "El tirador",
+    "title_lat": "El tirador",
+    "year": 2016,
+    "tmdb_id": 66857,
+    "poster": "https://image.tmdb.org/t/p/w500/oMmqtafm6Rdlka1ejJeC9BDWzyO.jpg",
+    "telegram_poster_id": 605,
+    "backdrop_path": "https://image.tmdb.org/t/p/w1280/dyysEEonr5tPcgItlfHItfx5ZCY.jpg",
+    "description": "Un francotirador, ex-marine muy condecorado, vuelve a la acción para defender al presidente de su posible asesinato, sin saber que le han tendido una trampa.",
+    "popularity": 16.6944,
+    "genres": [
+      "Action & Adventure",
+      "War & Politics",
+      "Drama"
+    ],
+    "created_at": "2026-11-19T11:08:29.563Z",
+    "updated_at": "2026-11-19T11:08:29.563Z",
+    "episodes_count": 31
+  },
+  {
+    "id": 16,
+    "title_en": "House of the Dragon",
+    "title_cas": "La casa del dragón",
+    "title_lat": "La casa del dragón",
+    "year": 2022,
+    "tmdb_id": 94997,
+    "poster": "https://image.tmdb.org/t/p/w500/7V0Ebks0GgpKvQ7QbLAIdX5dos4.jpg",
+    "telegram_poster_id": 637,
+    "backdrop_path": "https://image.tmdb.org/t/p/w1280/577eXC8wFQT0eUrJcgznSiFPRmk.jpg",
+    "description": "Basada en el libro 'Fuego y Sangre' de George R.R. Martin. La serie se centra en la casa Targaryen, trescientos años antes de los eventos vistos en 'Juego de Tronos'.",
+    "popularity": 72.1591,
+    "genres": [
+      "Sci-Fi & Fantasy",
+      "Drama",
+      "Action & Adventure"
+    ],
+    "created_at": "2026-11-19T11:14:01.823Z",
+    "updated_at": "2026-11-19T11:14:01.823Z",
+    "episodes_count": 26
+  },
+  {
+    "id": 17,
+    "title_en": "Marvel's Jessica Jones",
+    "title_cas": "Marvel - Jessica Jones",
+    "title_lat": "Marvel - Jessica Jones",
+    "year": 2015,
+    "tmdb_id": 38472,
+    "poster": "https://image.tmdb.org/t/p/w500/oxnWofiE9fHOgUfs9NJa6nG6NTR.jpg",
+    "telegram_poster_id": 672,
+    "backdrop_path": "https://image.tmdb.org/t/p/w1280/fjEOQhzZk2Or7VYUBeMx5ZIwU95.jpg",
+    "description": "Jessica Jones, es una serie de televisión estadounidense creada por Netflix y basada en el personaje del mismo nombre de los cómics de Marvel. Una mujer con superpoderes decide renegar de ellos e iniciar una vida nueva ejerciendo como detective privada.",
+    "popularity": 23.3221,
+    "genres": [
+      "Sci-Fi & Fantasy",
+      "Drama"
+    ],
+    "created_at": "2026-11-19T11:16:23.614Z",
+    "updated_at": "2026-11-19T11:16:23.614Z",
+    "episodes_count": 39
+  },
+  {
+    "id": 18,
+    "title_en": "Elite",
+    "title_cas": "",
+    "title_lat": "",
+    "year": 2018,
+    "tmdb_id": 76669,
+    "poster": "https://image.tmdb.org/t/p/w500/3NTAbAiao4JLzFQw6YxP1YZppM8.jpg",
+    "telegram_poster_id": 712,
+    "backdrop_path": "https://image.tmdb.org/t/p/w1280/1qOA3kMtQO8bjnW8M2smjA8tp10.jpg",
+    "description": "Las Encinas, un exclusivo colegio privado al que la élite social del país envía a sus hijos. Pero en el centro son admitidos tres adolescentes de familias humildes después de que un terremoto destruyera el colegio público en el que estudiaban. El choque de clases genera diversos problemas que se agravan hasta que, de repente, se produce un asesinato.",
+    "popularity": 37.7936,
+    "genres": [
+      "Crimen",
+      "Misterio",
+      "Drama"
+    ],
+    "created_at": "2026-11-19T11:30:03.770Z",
+    "updated_at": "2026-11-19T11:30:03.770Z",
+    "episodes_count": 64
+  },
+  {
+    "id": 19,
+    "title_en": "Lanterns",
+    "title_cas": "Linternas",
+    "title_lat": "Linternas",
+    "year": 2026,
+    "tmdb_id": 95350,
+    "poster": "https://image.tmdb.org/t/p/w500/rb94rKVIzLyfWufIN7WqLvadBDH.jpg",
+    "telegram_poster_id": 777,
+    "backdrop_path": "https://image.tmdb.org/t/p/w1280/wJjnJbVUwPz0GADAgpFt9nWtzUu.jpg",
+    "description": "Sigue al nuevo recluta John Stewart y al legendario Linterna Hal Jordan, dos policías intergalácticos que se ven envueltos en un oscuro misterio terrestre mientras investigan un asesinato en el corazón de Estados Unidos. Esto les lleva a misterios y ajustes de cuentas más oscuros.",
+    "popularity": 42.3845,
+    "genres": [
+      "Drama",
+      "Misterio",
+      "Sci-Fi & Fantasy"
+    ],
+    "created_at": "2026-11-19T11:39:00.736Z",
+    "updated_at": "2026-11-19T11:39:00.736Z",
+    "episodes_count": 8
+  },
+  {
+    "id": 20,
+    "title_en": "Carrie",
+    "title_cas": "",
+    "title_lat": "",
+    "year": 2026,
+    "tmdb_id": 288673,
+    "poster": "https://image.tmdb.org/t/p/w500/6mUMquPQBFJGqTACS3Azkwwrx8d.jpg",
+    "telegram_poster_id": 786,
+    "backdrop_path": "https://image.tmdb.org/t/p/w1280/9yCJtipMeDe8uAdSJKvw8BnYfRz.jpg",
+    "description": "Tras la repentina y prematura muerte de su padre, Carrie se ve arrojada al despiadado ecosistema del instituto público. Tiene que enfrentarse a un escándalo de ciberacoso que sacude a toda la comunidad, la presión continua, la crueldad de la era de las redes sociales y el despertar de unos misteriosos poderes telequinéticos que la acompañan en su adolescencia.",
+    "popularity": 38.3459,
+    "genres": [
+      "Misterio",
+      "Drama",
+      "Sci-Fi & Fantasy"
+    ],
+    "created_at": "2026-11-19T11:39:22.893Z",
+    "updated_at": "2026-11-19T11:39:22.893Z",
+    "episodes_count": 8
+  },
+  {
+    "id": 21,
+    "title_en": "Monster: The Lizzie Borden Story",
+    "title_cas": "Monstruo: La historia de Lizzie Borden",
+    "title_lat": "Monstruo: La historia de Lizzie Borden",
+    "year": 2026,
+    "tmdb_id": 299939,
+    "poster": "https://image.tmdb.org/t/p/w500/57XScX1aYtKi1LvHYFQLPUxVhTG.jpg",
+    "telegram_poster_id": 795,
+    "backdrop_path": "https://image.tmdb.org/t/p/w1280/gaew60NXUxok3Vmls7gkAT7lYW0.jpg",
+    "description": "Atrapada en un hogar victoriano marcado por la crueldad, Lizzie Borden mata brutalmente a sus padres a hachazos y conmociona a todo el país.",
+    "popularity": 21.6666,
+    "genres": [
+      "Drama",
+      "Crimen"
+    ],
+    "created_at": "2026-11-19T11:39:44.640Z",
+    "updated_at": "2026-11-19T11:39:44.640Z",
+    "episodes_count": 8
+  },
+  {
+    "id": 22,
+    "title_en": "Campus Drivers",
+    "title_cas": "",
+    "title_lat": "",
+    "year": 2026,
+    "tmdb_id": 303044,
+    "poster": "https://image.tmdb.org/t/p/w500/kTgV6VLp70QOBpCZqvEuTWAA4Ng.jpg",
+    "telegram_poster_id": 804,
+    "backdrop_path": "https://image.tmdb.org/t/p/w1280/oaWJm4brEMSWBmQIB73DFxsU683.jpg",
+    "description": "Loïs llega a Belrose junto a Max, el amor de su vida. Allí conoce a Lane, famoso por no comprometerse con nadie y el creador de Campus Drivers, la aplicación más popular del campus. Sus caminos nunca debieron cruzarse, pero ciertos encuentros lo cambian todo y reabren viejas heridas. Cuando el amor aparece donde menos te lo esperas, nada volverá a ser igual.",
+    "popularity": 93.8899,
+    "genres": [
+      "Drama"
+    ],
+    "created_at": "2026-11-19T11:40:26.910Z",
+    "updated_at": "2026-11-19T11:40:26.910Z",
+    "episodes_count": 6
+  },
+  {
+    "id": 23,
+    "title_en": "Gotham",
+    "title_cas": "",
+    "title_lat": "",
+    "year": 2014,
+    "tmdb_id": 60708,
+    "poster": "https://image.tmdb.org/t/p/w500/zLpSNnVoL2bjQdc1PcaHUPUzttP.jpg",
+    "telegram_poster_id": 811,
+    "backdrop_path": "https://image.tmdb.org/t/p/w1280/rbDFI2I1nMyJtX4Y3jJ4H1QRdRX.jpg",
+    "description": "Un nuevo recluta en el Departamento de Policía de Gotham City , James Gordon , se empareja con el veterano detective Harvey Bullock para resolver uno de los casos de más alto perfil de Gotham: el asesinato de Thomas y Martha Wayne . Durante su investigación, Gordon se reúne con el hijo de los Wayne ' Bruce , ahora bajo el cuidado de su mayordomo Alfred Pennyworth . El encuentro con el joven Wayne obliga aún más a Gordon a coger al misterioso asesino. En el camino, Gordon se involucra con las familias y asociados de la mafia de Gotham, incluyendo la Gángster Fish Mooney. Finalmente, Gordon se ve obligado a formar una amistad con Wayne, una amistad que le ayudará a formar el futuro del niño para convertirse en el Caballero Oscuro.",
+    "popularity": 60.8804,
+    "genres": [
+      "Drama",
+      "Crimen",
+      "Sci-Fi & Fantasy"
+    ],
+    "created_at": "2026-11-20T18:39:17.742Z",
+    "updated_at": "2026-11-20T18:39:17.742Z",
+    "episodes_count": 100
+  },
+  {
+    "id": 24,
+    "title_en": "Chernobyl",
+    "title_cas": "",
+    "title_lat": "",
+    "year": 2019,
+    "tmdb_id": 87108,
+    "poster": "https://image.tmdb.org/t/p/w500/hlLXt2tOPT6RRnjiUmoxyG1LTFi.jpg",
+    "telegram_poster_id": 912,
+    "backdrop_path": "https://image.tmdb.org/t/p/w1280/900tHlUYUkp7Ol04XFSoAaEIXcT.jpg",
+    "description": "En Abril de 1986, la Central Nuclear de Chernóbil en Ucrania (en aquel entonces, la Unión Soviética), sufrió una explosión masiva que liberó material radioactivo en Bielorrusia, Rusia, Ucrania, así como en zonas de Escandinavia y Europa Central. La serie relata lo que aconteció en 1986, en uno de los mayores desastres provocados por el hombre en la historia reciente, así como los sacrificios realizados para salvar al continente de un desastre sin precedentes.",
+    "popularity": 29.2006,
+    "genres": [
+      "Drama"
+    ],
+    "created_at": "2026-11-20T18:45:58.815Z",
+    "updated_at": "2026-11-20T18:45:58.815Z",
+    "episodes_count": 5
+  },
+  {
+    "id": 25,
+    "title_en": "Breaking Bad",
+    "title_cas": "",
+    "title_lat": "",
+    "year": 2008,
+    "tmdb_id": 1396,
+    "poster": "https://image.tmdb.org/t/p/w500/anFx9aTOOYqgS3v7x3R84Kz67ly.jpg",
+    "telegram_poster_id": 923,
+    "backdrop_path": "https://image.tmdb.org/t/p/w1280/tsRy63Mu5cu8etL1X7ZLyf7UP1M.jpg",
+    "description": "Un profesor de química con cáncer terminal se asocia con un exalumno suyo para fabricar y vender metanfetamina a fin de que su familia no pase apuros económicos.",
+    "popularity": 128.0016,
+    "genres": [
+      "Drama",
+      "Crimen"
+    ],
+    "created_at": "2026-11-20T18:46:23.927Z",
+    "updated_at": "2026-11-20T18:46:23.927Z",
+    "episodes_count": 62
+  },
+  {
+    "id": 26,
+    "title_en": "Silo",
+    "title_cas": "",
+    "title_lat": "",
+    "year": 2023,
+    "tmdb_id": 125988,
+    "poster": "https://image.tmdb.org/t/p/w500/r2QXomqKjkKHVtYGGtkf2l2Y7go.jpg",
+    "telegram_poster_id": 986,
+    "backdrop_path": "https://image.tmdb.org/t/p/w1280/4XccmjsOmQZw8S2iW1wvlvmb5v1.jpg",
+    "description": "En un futuro ruinoso y tóxico, existe una comunidad en un gigantesco silo subterráneo que alcanza cientos de pisos de profundidad. Allí, las personas viven en una sociedad llena de normas que creen que están destinadas a protegerlas.",
+    "popularity": 77.9174,
+    "genres": [
+      "Sci-Fi & Fantasy",
+      "Drama"
+    ],
+    "created_at": "2026-11-20T18:50:49.428Z",
+    "updated_at": "2026-11-20T18:50:49.428Z",
+    "episodes_count": 30
+  },
+  {
+    "id": 27,
+    "title_en": "The Sopranos",
+    "title_cas": "Los Soprano",
+    "title_lat": "Los Soprano",
+    "year": 1999,
+    "tmdb_id": 1398,
+    "poster": "https://image.tmdb.org/t/p/w500/rTc7ZXdroqjkKivFPvCPX0Ru7uw.jpg",
+    "telegram_poster_id": 1017,
+    "backdrop_path": "https://image.tmdb.org/t/p/w1280/lNpkvX2s8LGB0mjGODMT4o6Up7j.jpg",
+    "description": "Los Soprano (The Sopranos) es una serie de televisión estadounidense creada y producida por David Chase. La serie se estrenó en Estados Unidos el 10 de enero de 1999 por el canal de televisión por cable HBO, que la emitió ininterrumpidamente hasta su desenlace, el 10 de junio de 2007. La trama de la serie gira en torno al mafioso de Nueva Jersey Tony Soprano (James Gandolfini) y las dificultades que enfrenta tanto en su hogar como en la organización criminal que dirige. A su vez, la serie también se centra en la historia de los personajes cercanos a Tony, especialmente su esposa Carmela (Edie Falco) y su sobrino y protegido Christopher Moltisanti (Michael Imperioli).",
+    "popularity": 94.0614,
+    "genres": [
+      "Crimen",
+      "Drama"
+    ],
+    "created_at": "2026-11-20T18:52:38.082Z",
+    "updated_at": "2026-11-20T18:52:38.082Z",
+    "episodes_count": 86
+  },
+  {
+    "id": 28,
+    "title_en": "Dark Matter",
+    "title_cas": "Materia oscura",
+    "title_lat": "Materia oscura",
+    "year": 2024,
+    "tmdb_id": 196322,
+    "poster": "https://image.tmdb.org/t/p/w500/2DPmTlv8F0V1TQBPmlsGOVOhtWk.jpg",
+    "telegram_poster_id": 1104,
+    "backdrop_path": "https://image.tmdb.org/t/p/w1280/wFEAy4xRes1eeclsu7Z73Vzz7ET.jpg",
+    "description": "Jason Dessen acaba en una versión alternativa de su vida. Para volver con su auténtica familia, se embarca en un tortuoso viaje para salvarla del enemigo más aterrador: él mismo.",
+    "popularity": 32.2227,
+    "genres": [
+      "Sci-Fi & Fantasy",
+      "Drama"
+    ],
+    "created_at": "2026-11-20T18:57:04.406Z",
+    "updated_at": "2026-11-20T18:57:04.406Z",
+    "episodes_count": 19
+  },
+  {
+    "id": 29,
+    "title_en": "Locked Up",
+    "title_cas": "",
+    "title_lat": "Vis a vis",
+    "year": 2015,
+    "tmdb_id": 62455,
+    "poster": "https://image.tmdb.org/t/p/w500/1kH9u5DkoDUuIlhFFWjz9VSlKhC.jpg",
+    "telegram_poster_id": 1124,
+    "backdrop_path": "https://image.tmdb.org/t/p/w1280/iukGFUQQWUdgwTGGDLb1Pw3GoZP.jpg",
+    "description": "Su amante la manipuló para que cometiera varios delitos fiscales. Ahora, esta joven inocente deberá aprender a sobrevivir en un mundo nuevo y despiadado. Y rápido.",
+    "popularity": 15.4176,
+    "genres": [
+      "Drama",
+      "Crimen"
+    ],
+    "created_at": "2026-11-20T18:58:51.047Z",
+    "updated_at": "2026-11-20T18:58:51.047Z",
+    "episodes_count": 40
+  },
+  {
+    "id": 30,
+    "title_en": "Star Wars: The Clone Wars",
+    "title_cas": "Star Wars: The Clone Wars",
+    "title_lat": "Star Wars: La Guerra de los Clones",
+    "year": 2008,
+    "tmdb_id": 4194,
+    "poster": "https://image.tmdb.org/t/p/w500/e1nWfnnCVqxS2LeTO3dwGyAsG2V.jpg",
+    "telegram_poster_id": 1165,
+    "backdrop_path": "https://image.tmdb.org/t/p/w1280/m6eRgkR1KC6Mr6gKx6gKCzSn6vD.jpg",
+    "description": "La escasa tropa Jedi lucha por mantener la libertad y devolver la paz a la Galaxia frente al aparentemente interminable ejército droide, clones diseñados genéticamente. A través de cientos de planetas, los Caballeros Jedi y los Separatistas combaten por el futuro de la Galaxia, pero el número de planetas que van cayendo en manos del Lado Oscuro cada vez es mayor a causa de los movimientos de los Separatistas. El terrible conflicto se agrava porque nuestros héroes se ven absorbidos por la confusión de guerra, mientras el Conde Dooku, el asesino Asajj Ventress, su maestro Darth Sidious, el General Grievous y una amplia galería de enemigos nunca antes visto también conspiran y se unen para derrotarlos.\n\nLa historias de la serie 'Star Wars: The clone wars' transcurre entre el \"Episodio II: El ataque de los clones' y el \"Episodio III: La venganza de los Sith\" de la saga Star Wars.",
+    "popularity": 63.0108,
+    "genres": [
+      "Action & Adventure",
+      "Sci-Fi & Fantasy",
+      "Animación"
+    ],
+    "created_at": "2026-11-20T19:21:15.910Z",
+    "updated_at": "2026-11-20T19:21:15.910Z",
+    "episodes_count": 131
+  }
+]

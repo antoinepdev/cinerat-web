@@ -1,14 +1,20 @@
+export type CatalogKind = 'movie' | 'series';
+
 export interface Movie {
   id: number;
   title_en: string;
   title_cas?: string | null;
   title_lat?: string | null;
   year: number;
-  language_cas: boolean | null;
-  language_lat: boolean | null;
+  // Las series no tienen información de idioma en el catálogo.
+  language_cas?: boolean | null;
+  language_lat?: boolean | null;
+  popularity?: number;
   poster: string;
   description: string;
   genres: string[];
+  episodes_count?: number;
+  kind?: CatalogKind;
 }
 
 export type MovieLanguage = 'lat' | 'cas';
@@ -150,17 +156,22 @@ export function filtersToSearchParams(filters: MovieFilters) {
 }
 
 /** Tolera parámetros inválidos: descarta lo que no exista en las facetas. */
-export function parseFiltersFromSearch(search: string, facets: FilterFacets): MovieFilters {
+export function parseFiltersFromSearch(
+  search: string,
+  facets: FilterFacets,
+  options: { allowLanguages?: boolean } = {}
+): MovieFilters {
   const params = new URLSearchParams(search);
   const validGenres = new Set(facets.genres.map((genre) => genre.slug));
   const validYears = new Set(facets.years);
   const validLanguages = new Set(LANGUAGES.map((language) => language.value));
+  const allowLanguages = options.allowLanguages ?? true;
 
-  const languages = (params.get('idioma') ?? '')
-    .split(',')
-    .filter((value): value is MovieLanguage =>
-      validLanguages.has(value as MovieLanguage)
-    );
+  const languages = allowLanguages
+    ? (params.get('idioma') ?? '')
+        .split(',')
+        .filter((value): value is MovieLanguage => validLanguages.has(value as MovieLanguage))
+    : [];
 
   const genres = (params.get('genero') ?? '')
     .split(',')
