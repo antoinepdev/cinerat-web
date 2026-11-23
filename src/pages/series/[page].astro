@@ -1,0 +1,77 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import SeriesCatalog from '../../components/SeriesCatalog.tsx';
+import Pagination from '../../components/Pagination.astro';
+import { getSeriesBy } from '../../helpers/series.ts';
+import { getFacetOptions } from '../../helpers/movieFilters.ts';
+
+// Igual que el catálogo de películas, pero alimentado por series.json.
+const allSeries = getSeriesBy();
+const facets = getFacetOptions(allSeries);
+
+export async function getStaticPaths({ paginate }) {
+  const sortedSeries = getSeriesBy({ sort_by: 'popularity' });
+  return paginate(sortedSeries, { pageSize: 20 });
+}
+
+const { page } = Astro.props;
+---
+
+<Layout title="Catálogo de series - Cineman">
+  <Navbar />
+  <main class="bg-grid min-h-screen pt-24 pb-16 px-4">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-8">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-white">
+          Catálogo de <span class="gradient-text">series</span>
+        </h1>
+        <p class="text-gray-400 text-lg mt-2">
+          <span data-catalog-count data-default=`${allSeries.length} series disponibles`>{allSeries.length} series disponibles</span> · Página {page.currentPage} de {page.lastPage}
+        </p>
+        <p class="text-sm text-gray-500 mt-2">
+          Servicio independiente: eliges tus series y pagas solo por los episodios de tu selección.
+        </p>
+      </div>
+
+      <SeriesCatalog client:load allSeries={allSeries} seriesToRender={page.data} facets={facets} />
+
+      <div data-catalog-pagination>
+        <Pagination prevPage={page.url.prev} nextPage={page.url.next} totalPages={page.lastPage} page={page.currentPage} path="/series"/>
+      </div>
+    </div>
+  </main>
+  <footer class="bg-black/90 text-gray-500 text-center py-6 text-sm border-t border-white/5">
+    © 2026 Cineman · Hecho con ❤️ para los cinéfilos
+  </footer>
+</Layout>
+
+<script>
+  // La isla de React avisa por evento para ajustar la cabecera y la paginación.
+  window.addEventListener('catalog:filters', (event) => {
+    const { active, count } = (event as CustomEvent<{ active: boolean; count: number }>).detail;
+
+    document.querySelector('[data-catalog-pagination]')?.toggleAttribute('hidden', active);
+
+    const label = document.querySelector('[data-catalog-count]');
+    if (label) {
+      label.textContent = active
+        ? `${count} series encontradas`
+        : (label.dataset.default ?? '');
+    }
+  });
+</script>
+
+<style>
+  .bg-grid {
+    background-color: #0a0a0a;
+    background-image: radial-gradient(circle at 20px 20px, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  .gradient-text {
+    background: linear-gradient(135deg, #f97316, #ea580c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+</style>
