@@ -6,22 +6,26 @@ import Problem from '../components/Problem.astro';
 import Features from '../components/Features.astro';
 import HowToGet from '../components/HowToGet.astro';
 import Pricing from '../components/Pricing.astro';
+import SeriesPricing from '../components/SeriesPricing.astro';
 import Updates from '../components/Updates.astro';
 import Footer from '../components/Footer.astro';
 import MovieModal from '../components/MovieModal.astro';
 import movies from '../movies.json'
+import { allSeries } from '../helpers/series.ts'
 
 const packLength = movies.length
+const seriesLength = allSeries.length
 
 ---
-<Layout title="Cineman - Pack de Películas">
+<Layout title="Cineman - Películas y series">
   <Navbar />
-  <Hero packLength={packLength}/>
+  <Hero packLength={packLength} seriesLength={seriesLength}/>
   <Problem />
-  <Features packLength={packLength} />
+  <Features packLength={packLength} seriesLength={seriesLength} />
   <HowToGet />
-  <Pricing packLength={packLength} />
+  <Pricing packLength={packLength} seriesLength={seriesLength} />
+  <SeriesPricing seriesLength={seriesLength} />
   <Updates />
   <Footer />
-  <MovieModal packLength={packLength} />
+  <MovieModal packLength={packLength} series={allSeries} />
 </Layout>

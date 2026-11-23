@@ -1,5 +1,6 @@
 ---
-const { packLength } = Astro.props
+const { packLength, seriesLength = 0 } = Astro.props
+const base = import.meta.env.BASE_URL || '/cinerat-web';
 ---
 <section id="inicio" class="min-h-screen bg-grid text-white flex items-center pt-20 relative overflow-hidden">
   <div class="absolute top-0 left-0 w-full h-full glow-orange"></div>
@@ -14,11 +15,15 @@ const { packLength } = Astro.props
       <p class="text-lg mt-1 text-gray-400 border-b-2 border-orange-500 inline-block pb-1">
         sin anuncios ni bots · <span class="text-orange-400 font-bold">SOLO ARCHIVOS</span>
       </p>
+      <p class="text-base mt-3 text-gray-400">
+        Y si prefieres series: <strong class="text-orange-400">+{seriesLength} series a elección</strong>, desde <strong class="text-white">$5</strong> (servicio aparte).
+      </p>
 
       <div class="flex flex-wrap gap-8 mt-6">
         <div><span class="block text-3xl font-bold text-orange-400">{packLength}+</span><span class="text-sm text-gray-400">Películas</span></div>
         <div><span class="block text-3xl font-bold text-orange-400">1080p</span><span class="text-sm text-gray-400">Full HD</span></div>
         <div><span class="block text-3xl font-bold text-orange-400">Español</span><span class="text-sm text-gray-400">Lat / Cast</span></div>
+        <div><span class="block text-3xl font-bold text-orange-400">+{seriesLength}</span><span class="text-sm text-gray-400">Series a elección</span></div>
       </div>
 
       <div class="flex flex-wrap items-center gap-4 mt-6">
@@ -26,6 +31,7 @@ const { packLength } = Astro.props
         <button id="open-modal-btn" class="btn-secondary text-lg cursor-pointer">
           📋 Ver lista de películas
         </button>
+        <a href={`${base}/series/1`} class="btn-secondary text-lg">📺 Ver series</a>
       </div>
     </div>
     <div class="flex justify-center">

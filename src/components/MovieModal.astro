@@ -1,7 +1,13 @@
 ---
-const { packLength } = Astro.props
-const base = import.meta.env.BASE_URL || '/cinerat-web';
+import type { SeriesItem } from '../helpers/series.ts';
 
+interface Props {
+  packLength?: number;
+  series?: SeriesItem[];
+}
+
+const { packLength = 0, series = [] } = Astro.props;
+const base = import.meta.env.BASE_URL || '/cinerat-web';
 ---
 
 <div id="movie-modal" class="modal-overlay">
@@ -10,8 +16,9 @@ const base = import.meta.env.BASE_URL || '/cinerat-web';
     <div class="flex items-center justify-between p-5 border-b border-white/10">
       <div>
         <h2 class="text-2xl font-bold text-white flex items-center gap-2">
-          <span class="gradient-text">📋 Lista de películas</span>
-          <span class="text-sm font-normal text-gray-400 bg-white/5 px-3 py-1 rounded-full">+{packLength} títulos</span>
+          <span class="gradient-text">📋 Lista de películas y series</span>
+          <span class="text-sm font-normal text-gray-400 bg-white/5 px-3 py-1 rounded-full">+{packLength} películas</span>
+          <span class="text-sm font-normal text-gray-400 bg-white/5 px-3 py-1 rounded-full">+{series.length} series</span>
         </h2>
         <!-- NUEVO: Aviso visible de que es solo una muestra -->
         <div class="mt-2 flex flex-wrap items-center gap-3">
@@ -146,9 +153,31 @@ const base = import.meta.env.BASE_URL || '/cinerat-web';
         </div>
       </div>
 
+      <!-- Series: servicio independiente, leído desde series.json -->
+      <div>
+        <h3 class="text-orange-400 font-bold text-lg mb-3 flex flex-wrap items-center gap-2">
+          📺 Series
+          <span class="text-xs font-normal text-gray-500 bg-white/5 px-2 py-0.5 rounded-full">
+            {series.length} disponibles · se contratan aparte
+          </span>
+        </h3>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 text-gray-300 text-sm">
+          {series.map((item) => (
+            <span class="truncate" title={item.title_lat || item.title_cas || item.title_en}>
+              • {item.title_lat || item.title_cas || item.title_en}
+            </span>
+          ))}
+        </div>
+        <p class="mt-3 text-xs text-gray-500">
+          Elige tus series y paga solo por los episodios de tu selección (desde $5).
+          <a href={`${base}/series/1`} class="text-orange-400 hover:text-orange-300 border-b border-orange-400/30">Ver catálogo de series →</a>
+        </p>
+      </div>
+
       <!-- Mensaje extra (actualizado para reforzar) -->
       <div class="text-center text-gray-500 text-sm border-t border-white/5 pt-4 mt-2">
-        🎬 Y muchos más... <span class="text-orange-400 font-semibold">+{packLength} películas</span> en total.
+        🎬 Y muchos más... <span class="text-orange-400 font-semibold">+{packLength} películas</span> en total ·
+        <span class="text-orange-400 font-semibold">{series.length} series</span> como servicio aparte.
         <div class="mt-2">
           <a href=`${base}/peliculas/1`
              target="_blank" rel="noopener noreferrer"
@@ -161,7 +190,7 @@ const base = import.meta.env.BASE_URL || '/cinerat-web';
 
     <!-- Pie del modal -->
     <div class="p-4 border-t border-white/10 flex justify-between items-center">
-      <span class="text-xs text-gray-500">📌 Lista de muestra · +{packLength} películas disponibles</span>
+      <span class="text-xs text-gray-500">📌 Lista de muestra · +{packLength} películas y {series.length} series disponibles</span>
       <button id="close-modal-btn-footer" class="btn-primary text-sm py-2 px-6">Cerrar lista</button>
     </div>
   </div>

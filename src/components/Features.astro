@@ -1,8 +1,9 @@
 ---
 import FeatureCard from './FeatureCard.astro';
-const { packLength } = Astro.props
+const { packLength, seriesLength = 0 } = Astro.props
 const features = [
   { icon: '✅', title: `+${packLength} películas`, description: 'La colección más completa.' },
+  { icon: '📺', title: `+${seriesLength} series a elección`, description: 'Elige tus series y paga solo por sus episodios.' },
   { icon: '🔄', title: 'Actualizaciones mensuales', description: 'Siempre con los últimos estrenos.' },
   { icon: '⚡️', title: 'Sin anuncios ni bots', description: 'SOLO ARCHIVOS, directo al grano.' },
   { icon: '🎧', title: 'Español Latino y Castellano', description: 'Elige el audio que prefieras.' },
@@ -16,7 +17,7 @@ const features = [
 <section id="caracteristicas" class="py-16 bg-black border-t border-white/5">
   <div class="max-w-6xl mx-auto px-4">
     <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-12">
-      PACK DE <span class="gradient-text">PELÍCULAS</span>
+      PELÍCULAS <span class="gradient-text">Y SERIES</span>
     </h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       {features.map(f => <FeatureCard {...f} />)}

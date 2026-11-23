@@ -1,8 +1,10 @@
 ---
 export interface Props {
   packLength?: number;
+  seriesLength?: number;
 }
-const { packLength = 1071 } = Astro.props;
+const { packLength = 1071, seriesLength = 0 } = Astro.props;
+const base = import.meta.env.BASE_URL || '/cinerat-web';
 ---
 
 <section id="precio" class="py-16 bg-black border-t border-white/5">
@@ -24,6 +26,11 @@ const { packLength = 1071 } = Astro.props;
         <li class="flex items-center gap-2">✅ Sin anuncios ni bots</li>
         <li class="flex items-center gap-2">✅ Archivos descargables</li>
       </ul>
+
+      <p class="mt-4 text-xs text-gray-400">
+        💡 ¿Te interesan solo series? Tenemos {seriesLength} series a elección desde $5
+        <a href={`${base}/series/1`} class="text-orange-400 hover:text-orange-300 border-b border-orange-400/30">· ver catálogo →</a>
+      </p>
 
       <!-- Métodos de pago con logos -->
       <div class="mt-6 p-4 bg-orange-500/10 rounded-xl border border-orange-500/20 text-left">
