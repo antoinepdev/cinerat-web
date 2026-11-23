@@ -37,7 +37,7 @@ const base = '/cinerat-web';
       <!-- Contenedor React con filtros y paginación client-side -->
       <MoviesContainer client:load moviesToRender={page.data} allMovies={allMovies} facets={facets} />
       <div data-catalog-pagination>
-        <Pagination prevPage={page.url.prev} nextPage={page.url.next} totalPages={page.total} page={page.currentPage}/>
+        <Pagination prevPage={page.url.prev} nextPage={page.url.next} totalPages={page.lastPage} page={page.currentPage}/>
       </div>
     </div>
   </main>

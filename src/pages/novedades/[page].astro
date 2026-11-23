@@ -32,7 +32,7 @@ const { page } = Astro.props;
       </div>
 
       <MoviesContainer moviesToRender={page.data} />
-      <Pagination prevPage={page.url.prev} nextPage={page.url.next} totalPages={page.total} page={page.currentPage} path="/novedades"/>
+      <Pagination prevPage={page.url.prev} nextPage={page.url.next} totalPages={page.lastPage} page={page.currentPage} path="/novedades"/>
     </div>
   </main>
   <footer class="bg-black/90 text-gray-500 text-center py-6 text-sm border-t border-white/5">
